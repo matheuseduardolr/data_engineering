@@ -1,0 +1,45 @@
+{
+    "coord": {
+        "lon": -35.7353,
+        "lat": -9.6658
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "nublado",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 24.69,
+        "feels_like": 25.67,
+        "temp_min": 24.69,
+        "temp_max": 24.69,
+        "pressure": 1010,
+        "humidity": 94,
+        "sea_level": 1010,
+        "grnd_level": 1007
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.06,
+        "deg": 10
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1772492009,
+    "sys": {
+        "type": 1,
+        "id": 8413,
+        "country": "BR",
+        "sunrise": 1772440017,
+        "sunset": 1772484216
+    },
+    "timezone": -10800,
+    "id": 3395981,
+    "name": "Macei\u00f3",
+    "cod": 200
+}
