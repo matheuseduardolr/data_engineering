@@ -76,14 +76,15 @@ def drop_columns(df: pd.DataFrame, cols:list[str]) -> pd.DataFrame:
     return df
 
 def rename_columns(df: pd.DataFrame, cols:dict[str, str]) -> pd.DataFrame:
-    df.rename(columns=cols)
+    df = df.rename(columns=cols)
     logging.info(f"-> -- Coluna renomeadas --\n")
 
     return df
 
 def normalize_datetime(df: pd.DataFrame, cols:list[str]) -> pd.DataFrame:
     for name in cols:
-        df[name] = pd.to_datetime(df[name], unit='s', utc=True).dt.tz_convert('America/Sao_Paulo')
+        # df[name] = pd.to_datetime(df[name], unit='s', utc=True).dt.tz_convert('America/Sao_Paulo')
+        df[name] = pd.to_datetime(df[name], unit='s', utc=True, errors='coerce')
 
     logging.info(f"-> -- Coluna convertidas para datetime --\n")
     return df

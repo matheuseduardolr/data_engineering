@@ -17,7 +17,8 @@ load_dotenv(env_path)
 user = os.getenv('user')
 password = os.getenv('password')
 database = os.getenv('database')
-host = 'host.docker.internal'
+host = os.getenv('host')
+
 
 def get_engine():
     return create_engine(
