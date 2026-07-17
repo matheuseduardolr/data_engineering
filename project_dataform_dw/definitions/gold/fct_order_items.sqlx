@@ -1,0 +1,24 @@
+config {
+    type: "table",
+    schema: "gold",
+    description: "Tabela fato com granularidade de item de pedido",
+    tags: ["gold", "fact"],
+    bigquery: {
+        partitionBy: "DATE(order_created_at)",
+        clusterBy: ["user_id","product_id"]
+    },
+    assertions: {
+        uniqueKey: ["order_item_id"],
+        nonNull: ["order_item_id", "user_id", "product_id", "sale_price"]
+    }
+}
+
+SELECT
+    order_item_id,
+    order_id,
+    user_id,
+    product_id,
+    sale_price,
+    status,
+    order_created_at
+FROM ${ref("int_orders")}

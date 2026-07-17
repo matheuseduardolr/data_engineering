@@ -1,0 +1,15 @@
+config {
+    type: "view",
+    schema: "bronze"
+}
+
+SELECT
+    order_id,
+    user_id,
+    status,
+    created_at,
+    returned_at,
+    shipped_at,
+    delivered_at,
+    num_of_item
+FROM ${constants.PUBLIC_DATA_PROJECT}.thelook_ecommerce.orders

@@ -1,0 +1,17 @@
+config {
+    type: "table",
+    schema: "silver"
+}
+
+SELECT
+    product_id,
+    TRIM(product_name) AS product_name,
+    category,
+    brand,
+    department,
+    retail_price,
+    cost,
+    ROUND(retail_price - cost, 2) AS margin
+FROM ${ref("stg_products")}
+WHERE product_id IS NOT NULL
+    AND retail_price > 0

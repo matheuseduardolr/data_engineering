@@ -1,2 +1,5 @@
 project_etl_weather/config/*
 
+project_dataform_dw/.df-credentials.json
+project_dataform_dw/node_modules/
+

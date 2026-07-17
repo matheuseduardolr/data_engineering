@@ -1,0 +1,20 @@
+config {
+    type: "table",
+    schema: "silver"
+}
+
+SELECT 
+    user_id,
+    INITCAP(TRIM(first_name)) AS first_name,
+    INITCAP(TRIM(last_name)) AS last_name,
+    LOWER(TRIM(email)) AS email,
+    age,
+    gender,
+    country,
+    city
+FROM ${ref("stg_users")}
+WHERE user_id IS NOT NULL
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY user_id
+    ORDER BY created_at DESC
+) = 1

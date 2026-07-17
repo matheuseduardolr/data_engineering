@@ -1,0 +1,14 @@
+config {
+    type: "view",
+    schema: "bronze"
+}
+
+SELECT
+    id AS product_id,
+    name AS product_name,
+    category,
+    brand,
+    department,
+    retail_price,
+    cost
+FROM ${constants.PUBLIC_DATA_PROJECT}.thelook_ecommerce.products

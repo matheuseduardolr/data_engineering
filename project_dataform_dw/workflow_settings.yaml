@@ -1,0 +1,5 @@
+dataformCoreVersion: 3.0.61
+defaultProject: anatel-dwh
+defaultLocation: US
+defaultDataset: dataform
+defaultAssertionDataset: dataform_assertions

@@ -1,0 +1,7 @@
+config {
+    type: "table",
+    schema: "gold"
+}
+
+SELECT *
+FROM ${ref("int_users")}
